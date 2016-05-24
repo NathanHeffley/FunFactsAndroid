@@ -23,7 +23,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="No Fun Fact has been delivered yet :("
+        android:text="@string/press_button"
         android:textSize="@dimen/text_size"
         android:textColor="#ffffffff"
         android:id="@+id/factTextView"

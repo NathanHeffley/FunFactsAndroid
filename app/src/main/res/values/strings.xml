@@ -2,4 +2,7 @@
     <string name="app_name">Fun Facts</string>
     <string name="header_text">Did you know?</string>
     <string name="button_text">Show Another Fun Fact!</string>
+
+    <string name="press_button">Tap the button to get a fun fact :)</string>
+    <string name="missing_fact">I wasn\'t able to find you a fun fact :(</string>
 </resources>
