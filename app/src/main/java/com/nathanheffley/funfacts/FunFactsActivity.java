@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.nathanheffley.funfacts.api.Fact;
@@ -23,8 +22,6 @@ public class FunFactsActivity extends AppCompatActivity {
 
     // Declare necessary view variables
     private TextView factTextView;
-    private Button showFactButton;
-    private RelativeLayout factViewLayout;
 
     // Networking library parts
     private Retrofit retrofit = new Retrofit.Builder()
@@ -40,8 +37,7 @@ public class FunFactsActivity extends AppCompatActivity {
 
         // Assign the views from the layout file to the corresponding variables
         factTextView = (TextView) findViewById(R.id.factTextView);
-        showFactButton = (Button) findViewById(R.id.showFactButton);
-        factViewLayout = (RelativeLayout) findViewById(R.id.factViewLayout);
+        Button showFactButton = (Button) findViewById(R.id.showFactButton);
 
         View.OnClickListener buttonListener = new View.OnClickListener() {
             @Override
@@ -49,7 +45,6 @@ public class FunFactsActivity extends AppCompatActivity {
                 Log.d(TAG, "onClick beginning execution");
 
                 setRandomFact();
-                setColors();
 
                 Log.d(TAG, "onClick successfully executed");
             }
@@ -59,18 +54,8 @@ public class FunFactsActivity extends AppCompatActivity {
         showFactButton.setOnClickListener(buttonListener);
 
         setRandomFact();
-        setColors();
 
         Log.d(TAG, "onCreate successfully executed");
-    }
-
-    public void setColors() {
-        // Get the new color to be used
-        int themeColor = ColorWheel.getColor();
-        // Update the screen with our new themeColor
-        factViewLayout.setBackgroundColor(themeColor);
-        // Update the button text with our new themeColor
-        showFactButton.setTextColor(themeColor);
     }
 
     public void setRandomFact() {
