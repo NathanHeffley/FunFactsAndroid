@@ -3,5 +3,6 @@
     <string name="header_text">Did you know?</string>
     <string name="button_text">Show Another Fun Fact!</string>
 
+    <string name="error_fact">I wasn\'t able to find you a fun fact :( Something is probably wrong with the Fun Facts server. We\'re working to fix it as soon as possible!</string>
     <string name="missing_fact">I wasn\'t able to find you a fun fact :( Are you sure you\'re connected to the Internet?</string>
 </resources>

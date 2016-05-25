@@ -69,7 +69,7 @@ public class FunFactsActivity extends AppCompatActivity {
                     Fact fact = response.body();
                     factTextView.setText(fact.getText());
                 } else {
-                    factTextView.setText(R.string.missing_fact);
+                    factTextView.setText(R.string.error_fact);
                     Log.e(TAG, "getRandomFact() call was unsuccessful");
                 }
             }
