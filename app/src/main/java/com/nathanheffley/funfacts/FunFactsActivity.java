@@ -18,10 +18,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class FunFactsActivity extends AppCompatActivity {
     public final String TAG = FunFactsActivity.class.getSimpleName();
-    private final String API_URL = "http://theresonance.space/";
+    public final String API_URL = "http://theresonance.space/";
 
     // Declare necessary view variables
-    private TextView factTextView;
+    public TextView factTextView;
+    public Button showFactButton;
 
     // Networking library parts
     private Retrofit retrofit = new Retrofit.Builder()
@@ -37,7 +38,7 @@ public class FunFactsActivity extends AppCompatActivity {
 
         // Assign the views from the layout file to the corresponding variables
         factTextView = (TextView) findViewById(R.id.factTextView);
-        Button showFactButton = (Button) findViewById(R.id.showFactButton);
+        showFactButton = (Button) findViewById(R.id.showFactButton);
 
         View.OnClickListener buttonListener = new View.OnClickListener() {
             @Override
@@ -66,18 +67,16 @@ public class FunFactsActivity extends AppCompatActivity {
                 Log.d(TAG, "Response status code: " + response.code());
                 if (response.isSuccessful()) {
                     Fact fact = response.body();
-                    if (response.isSuccessful()) {
-                        factTextView.setText(fact.getText());
-                    } else {
-                        factTextView.setText(R.string.missing_fact);
-                    }
+                    factTextView.setText(fact.getText());
                 } else {
+                    factTextView.setText(R.string.missing_fact);
                     Log.e(TAG, "getRandomFact() call was unsuccessful");
                 }
             }
 
             @Override
             public void onFailure(Call<Fact> call, Throwable t) {
+                factTextView.setText(R.string.missing_fact);
                 Log.e(TAG, t.getMessage());
             }
         });
