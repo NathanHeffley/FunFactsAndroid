@@ -18,7 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class FunFactsActivity extends AppCompatActivity {
     public final String TAG = FunFactsActivity.class.getSimpleName();
-    public final String API_URL = "http://theresonance.space/";
+    public final String API_URL = "https://api.theresonance.space/";
 
     // Declare necessary view variables
     public TextView factTextView;
